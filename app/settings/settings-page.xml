@@ -1,0 +1,37 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Paramètres" class="title-text" />
+            <Label text="Personnalisez votre expérience" class="subtitle-text" />
+            
+            <GridLayout columns="*, auto" class="card p-4 m-y-4">
+                <Label text="Volume" col="0" class="text-lg" />
+                <Slider minValue="0" maxValue="100" value="{{ volume }}" width="200" col="1" />
+            </GridLayout>
+            
+            <GridLayout columns="*, auto" class="card p-4 m-y-4">
+                <Label text="Thème" col="0" class="text-lg" />
+                <Switch checked="{{ isDarkMode }}" col="1" />
+            </GridLayout>
+            
+            <GridLayout columns="*, auto" class="card p-4 m-y-4">
+                <Label text="Contrôle parental" col="0" class="text-lg" />
+                <Switch checked="{{ parentalControlEnabled }}" col="1" />
+            </GridLayout>
+            
+            <StackLayout class="card p-4 m-y-4">
+                <Label text="Langue" class="text-lg m-b-2" />
+                <Label text="Français" class="text-center text-lg text-gray-400" />
+                <Label text="(Seul le français est disponible)" class="text-center text-sm text-gray-400" />
+            </StackLayout>
+            
+            <Button text="À propos de l'application" tap="{{ onAboutTap }}" class="btn-secondary m-y-4" />
+            
+            <StackLayout class="card p-4 m-y-4">
+                <Label text="Little Explorer" class="title-text text-center" />
+                <Label text="Version 1.0.0" class="text-center text-gray-400" />
+                <Label text="© 2025 Little Explorer" class="text-center text-gray-400 m-t-4" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>

@@ -1,0 +1,75 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="story-page">
+    <ActionBar class="nav-header">
+        <NavigationButton text="Retour aux histoires" tap="{{ onBackToStories }}" />
+        <Label text="{{ story.title }}" />
+    </ActionBar>
+    
+    <GridLayout rows="*, auto">
+        <!-- Page content -->
+        <GridLayout row="0" columns="*" rows="auto, *, auto">
+            <!-- Page title -->
+            <Label row="0" text="{{ currentPage.title }}" class="font-bold text-xl p-4" textWrap="true" />
+            
+            <!-- Main content area -->
+            <GridLayout row="1" rows="*, auto">
+                <!-- Story image -->
+                <Image src="{{ currentPage.image }}" stretch="aspectFill" verticalAlignment="middle" />
+                
+                <!-- Interactive elements overlay for page 1 -->
+                <GridLayout rows="auto" visibility="{{ currentPageIndex === 0 ? 'visible' : 'collapsed' }}">
+                    <StackLayout class="m-t-4">
+                        <!-- Animal tap areas could be added here as Image elements with tap handlers -->
+                        <Image src="~/assets/images/stories/cow_icon.png" width="50" height="50" tap="{{ onAnimalTap }}" horizontalAlignment="left" verticalAlignment="top" class="m-l-4" id="vache" />
+                        <Image src="~/assets/images/stories/horse_icon.png" width="50" height="50" tap="{{ onAnimalTap }}" horizontalAlignment="center" class="m-t-20" id="cheval" />
+                        <Image src="~/assets/images/stories/chicken_icon.png" width="50" height="50" tap="{{ onAnimalTap }}" horizontalAlignment="right" verticalAlignment="top" class="m-r-4" id="poule" />
+                    </StackLayout>
+                </GridLayout>
+                
+                <!-- Interactive elements overlay for page 2 -->
+                <GridLayout rows="auto" visibility="{{ currentPageIndex === 1 ? 'visible' : 'collapsed' }}">
+                    <StackLayout class="m-t-4">
+                        <!-- Flamingo tap area -->
+                        <Image src="~/assets/images/stories/flamingo_tap.png" width="70" height="70" tap="{{ onFlamingoCutscene }}" horizontalAlignment="center" verticalAlignment="bottom" class="m-b-4" />
+                        
+                        <!-- Dialogue bubbles -->
+                        <StackLayout *ngFor="let dialogue of currentPage.dialogues" class="dialogue-bubble m-2" tap="{{ onDialogueTap }}">
+                            <Label text="{{ dialogue.speaker }}" class="font-bold" />
+                            <Label text="{{ dialogue.text }}" textWrap="true" />
+                        </StackLayout>
+                    </StackLayout>
+                </GridLayout>
+                
+                <!-- Interactive elements overlay for page 4 -->
+                <GridLayout rows="auto, auto, auto" verticalAlignment="bottom" visibility="{{ currentPageIndex === 3 ? 'visible' : 'collapsed' }}">
+                    <Label text="Imite les animaux!" class="text-center font-bold m-b-2" row="0" />
+                    <GridLayout columns="*, *, *" row="1" class="m-x-4 m-b-4">
+                        <Button text="🐐 Bè" tap="{{ onAnimalSoundButton }}" class="btn-secondary" col="0" id="chevre" />
+                        <Button text="🐱 Miaou" tap="{{ onAnimalSoundButton }}" class="btn-secondary" col="1" id="chat" />
+                        <Button text="🐓 Cocorico" tap="{{ onAnimalSoundButton }}" class="btn-secondary" col="2" id="coq" />
+                    </GridLayout>
+                </GridLayout>
+                
+                <!-- Story text -->
+                <StackLayout verticalAlignment="bottom">
+                    <StackLayout class="bg-white p-4 rounded-t-lg" opacity="0.9">
+                        <GridLayout columns="auto, *" rows="auto">
+                            <Button text="{{ isPlaying ? '⏸️' : '▶️' }}" tap="{{ onToggleAudio }}" class="text-center" col="0" width="40" height="40" />
+                            <Label text="{{ currentPage.text }}" textWrap="true" class="story-text m-l-2" col="1" />
+                        </GridLayout>
+                    </StackLayout>
+                </StackLayout>
+            </GridLayout>
+            
+            <!-- Quiz prompt area -->
+            <StackLayout row="2" class="p-4 bg-white" opacity="0.9" visibility="{{ showQuizPrompt ? 'visible' : 'collapsed' }}">
+                <Label text="{{ quizPrompt }}" textWrap="true" class="font-bold" />
+            </StackLayout>
+        </GridLayout>
+        
+        <!-- Navigation controls -->
+        <GridLayout row="1" columns="*, *" class="p-4 bg-white">
+            <Button text="Précédent" tap="{{ onPreviousPage }}" col="0" class="btn-secondary" visibility="{{ currentPageIndex > 0 ? 'visible' : 'collapsed' }}" />
+            <Button text="{{ currentPageIndex < story.pages.length - 1 ? 'Suivant' : 'Terminer' }}" tap="{{ onNextPage }}" col="1" class="btn-primary" />
+        </GridLayout>
+    </GridLayout>
+</Page>

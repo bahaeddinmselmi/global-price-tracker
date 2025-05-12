@@ -1,0 +1,23 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Histoires" class="title-text" />
+            <Label text="Découvrez des histoires interactives!" class="subtitle-text" />
+            
+            <ListView items="{{ stories }}" height="90%" separatorColor="transparent" class="m-t-4">
+                <ListView.itemTemplate>
+                    <GridLayout columns="auto, *" rows="auto, auto, auto" class="card m-y-2 p-4" tap="{{ $parents['ListView'].onStoryTap }}">
+                        <Image src="{{ coverImage }}" width="80" height="80" row="0" col="0" rowSpan="3" class="m-r-2" />
+                        <Label text="{{ title }}" row="0" col="1" class="font-bold" />
+                        <Label text="{{ description }}" row="1" col="1" textWrap="true" class="subtitle-text" />
+                        <StackLayout orientation="horizontal" row="2" col="1" class="m-t-2">
+                            <Label text="{{ pages.length }} pages" class="text-sm" />
+                            <Label text=" | " class="text-sm" />
+                            <Label text="{{ hasAudio ? '🔊 Audio' : '' }}" class="text-sm" />
+                        </StackLayout>
+                    </GridLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</Page>

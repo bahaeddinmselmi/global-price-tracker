@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page {
+  background-color: #fff;
+}
+
+.bottom-nav {
+  background-color: #ffffff;
+  border-top-width: 1px;
+  border-top-color: #e5e5e5;
+}
+
+.bottom-nav-item {
+  color: #666666;
+}
+
+.bottom-nav-item-active {
+  color: #f8b500;
+}
+
+.tab-view-item {
+  background-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(to bottom, #fceabb, #f8b500);
+}
+
+.card {
+  border-radius: 16;
+  background-color: #ffffff;
+  elevation: 4;
+}
+
+.title-text {
+  font-size: 24;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 8;
+}
+
+.subtitle-text {
+  font-size: 16;
+  color: #666666;
+  margin-bottom: 16;
+}
+
+.btn-primary {
+  background-color: #f8b500;
+  color: #ffffff;
+  border-radius: 8;
+  font-weight: bold;
+  padding: 12 16;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #f8b500;
+  border-width: 1;
+  border-color: #f8b500;
+  border-radius: 8;
+  font-weight: bold;
+  padding: 12 16;
+}
+
+.icon-btn {
+  font-size: 24;
+  color: #666666;
+}
+
+.story-page {
+  background-color: #ffffff;
+}
+
+.story-text {
+  font-size: 18;
+  color: #333333;
+  text-align: left;
+  padding: 16;
+}
+
+.nav-header {
+  background-color: #f8b500;
+  color: #ffffff;
+}

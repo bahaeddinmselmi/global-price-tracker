@@ -1,0 +1,27 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ActionBar title="{{ unitTitle }}" class="nav-header">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Image src="{{ unitImage }}" class="m-b-4" height="200" stretch="aspectFit" />
+            <Label text="{{ unitDescription }}" textWrap="true" class="subtitle-text" />
+            
+            <GridLayout rows="auto" columns="*, *" class="m-t-4">
+                <Button text="Commencer" tap="{{ onStartLearning }}" class="btn-primary" col="0" />
+                <Button text="Exercices" tap="{{ onStartExercises }}" class="btn-secondary" col="1" />
+            </GridLayout>
+            
+            <Label text="Activités" class="title-text m-t-4" />
+            <ListView items="{{ activities }}" class="m-t-2" height="300">
+                <ListView.itemTemplate>
+                    <StackLayout class="card p-3 m-y-2">
+                        <Label text="{{ title }}" class="font-bold" />
+                        <Label text="{{ description }}" textWrap="true" class="subtitle-text" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</Page>
