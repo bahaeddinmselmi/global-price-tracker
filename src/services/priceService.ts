@@ -1,8 +1,8 @@
-import { ProductPrices, Country, PriceData } from '../types';
-import { mockFetchProductPrices, mockSaveSearchToHistory } from './mockPriceService';
+import { fetchSerpApiPrices } from './serpApiService';
+import { mockSaveSearchToHistory } from './mockPriceService';
 
-// Use mock service for demonstration purposes
-export const fetchProductPrices = mockFetchProductPrices;
+// Redirect to Real API Service
+export const fetchProductPrices = fetchSerpApiPrices;
 
-// Use mock service for demonstration purposes
+// Keep history mock for now (uses localStorage)
 export const saveSearchToHistory = mockSaveSearchToHistory;
