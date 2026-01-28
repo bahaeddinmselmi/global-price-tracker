@@ -1,88 +1,53 @@
-# International Product Price Tracker
+# 🌍 Global Price Tracker
 
-A web app for tracking and comparing the prices of products across various international stores. Built with React, Vite, and TypeScript.
+> A modern, AI-powered **International Product Price Comparison** tool. Track, compare, and analyze product prices across multiple countries in real-time.
 
-## Features
+[![React](https://img.shields.io/badge/React-18-blue)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-Fast-purple)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-Styled-cyan)](https://tailwindcss.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- **Product Search:** Find products from multiple sources and compare their prices internationally.
-- **Price Analytics:** Visualize price trends over time with interactive charts (powered by Chart.js and react-chartjs-2).
-- **Export Data:** Export price data to Excel format using ExcelJS and FileSaver.
-- **Rich Filtering:** Use react-select for advanced product and data filtering.
-- **Web Scraping:** Gathers price data using Cheerio and Linkedom for robust HTML parsing.
+## 📖 Overview
 
-## Tech Stack
+**Global Price Tracker** solves the problem of cross-border shopping. It allows users to:
+*   **Search Once, Compare Everywhere**: Input a product name and see prices from Tunisia, USA, France, etc.
+*   **AI-Enhanced Search**: Uses smart algorithms (and simulated browser sessions) to find prices even on sites without APIs.
+*   **Currency Conversion**: Automatically normalizes prices for easy comparison.
+*   **Export Data**: Download detailed reports in **Excel** or CSV for offline analysis.
 
-- **Frontend:** React, TypeScript, Vite
-- **Styling:** TailwindCSS, PostCSS, clsx
-- **Charts:** Chart.js, React Chart.js 2
-- **Utilities:** Cheerio, Linkedom, ExcelJS, FileSaver
-- **Linting/Formatting:** ESLint, Prettier
+## ✨ Features
+*   **Smart Country Selection**: tailored search optimization for distinct markets (e.g., Jumia TN vs Amazon US).
+*   **Visual Analytics**: Integrated charts to visualize price variance.
+*   **History**: Local storage based history to revisit previous searches.
+*   **Privacy First**: All processing happens client-side or via transparent proxies.
 
-## Project Structure
+## 🚀 Live Demo
+[View Live Website](https://bahaeddinmselmi.github.io/global-price-tracker/)
 
-- `/app`         – Core application code
-- `/components`  – Reusable UI components
-- `/constants`   – App-wide constants
-- `/context`     – React context providers
-- `/data`        – Static or mock data
-- `/hooks`       – Custom React hooks
-- `/services`    – API and data-fetching services
-- `/supabase`    – Database integration (if Supabase used)
-- `/assets`      – Static assets (images, etc.)
-- `/types`       – TypeScript type definitions
+## 🛠 Installation
 
-## Getting Started
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/bahaeddinmselmi/global-price-tracker.git
+    cd global-price-tracker
+    ```
 
-### Prerequisites
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
 
-- Node.js (v18 or above recommended)
-- npm or yarn
+3.  Run locally:
+    ```bash
+    npm run dev
+    ```
 
-### Installation
-
-Clone the repository and install dependencies:
-
-```bash
-git clone https://github.com/bahaeddinmselmi/productsearch.git
-cd productsearch
-npm install
-```
-
-### Development
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Visit [http://localhost:3000](http://localhost:3000) to view the app.
-
-### Build
-
-Create a production build:
+## 📦 Building for Production
 
 ```bash
 npm run build
 ```
+The output will be in the `dist/` folder, ready for deployment.
 
-Preview the production build locally:
-
-```bash
-npm run preview
-```
-
-## Scripts
-
-- `npm run dev` – Start the development server
-- `npm run build` – Build for production
-- `npm run lint` – Lint the codebase
-- `npm run preview` – Preview the built app locally
-
-## License
-
-[MIT](LICENSE)
-
----
-
-> For more details or to contribute, visit the [GitHub Repository](https://github.com/bahaeddinmselmi/productsearch).
+## 📄 License
+MIT
